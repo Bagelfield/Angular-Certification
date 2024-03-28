@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/mini.css/dist/mini-dark.min.css";
+
+.flex-display-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-display-spaced {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.bold {
+ font-weight: bold;
+}
+
+.borders {
+  border: white;
+  border-inline: inherit;
+  border-style: outset;
+  border-image: radial-gradient(rgb(255, 255, 255), rgb(87, 86, 86)) 1;
+}

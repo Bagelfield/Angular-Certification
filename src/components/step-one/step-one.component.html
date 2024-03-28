@@ -1,0 +1,19 @@
+<h1>{{ title }}</h1>
+<div class="flex-display-horizontal" *ngIf="teslaService.modelsAvailable.length > 0">
+  <p>{{ modelLabel }}</p>
+  <select id="modelSelect" [(ngModel)]="selectModel" (change)="modelDescriptionSelected(selectModel)">
+    <option value="">Choose your Model</option>
+    <option *ngFor="let model of teslaService.modelsAvailable" [value]="model.code">
+      {{ model.description }}
+    </option>
+  </select>
+  <ng-container *ngIf="teslaService.selectedModel">
+    <p>{{ colorLabel }}</p>
+    <select id="colorSelect" [(ngModel)]="selectColor" (change)="colorDescriptionSelected(selectColor)">
+        <option *ngFor="let color of teslaService.colorsOfSelectedModelAvailable" [value]="color.code">
+          {{ color.description }}
+        </option>
+    </select>
+  </ng-container>
+</div>
+<app-image [modelCode]="selectModel" [colorCode]="selectColor"></app-image>

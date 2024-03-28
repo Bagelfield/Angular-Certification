@@ -1,0 +1,20 @@
+<h1>{{ title }}</h1>
+<ng-container *ngIf="teslaService.stepOneCompleted()">
+  <div class="flex-display-horizontal">
+  <p>{{ configLabel }}</p>
+    <select id="configSelect" [(ngModel)]="selectConfig" (change)="configIdSelected(selectConfig)">
+      <option [value]="0">Choose your configuration</option>
+      <option *ngFor="let config of teslaService.optionsOfSelectedModelAvailable?.configs" [value]="config.id">
+        {{ config.description }}
+      </option>
+    </select>
+  </div>
+  <p *ngIf="teslaService.selectedConfig">{{ (teslaService.selectedConfig | config)  + " - Cost: " + (teslaService.calculateTotalPrice() | currency : 'USD') }}</p>
+  <div *ngIf="displayTowHitch" class="flex-display-horizontal">
+    <p>{{ towHitchLabel }}</p><input type="checkbox" id="includeTow" name="includeTow" [(ngModel)]="checkedTowHitch" (change)="saveTowHitch()">
+  </div>
+  <div *ngIf="displayYokeWheel" class="flex-display-horizontal">
+    <p>{{ yokeWheelLabel }}</p><input type="checkbox" id="includeYoke" name="includeYoke" [(ngModel)]="checkedYokeWheel" (change)="saveYokeWheel()">
+  </div>
+  <app-image [modelCode]="teslaService.selectedModel?.code" [colorCode]="teslaService.selectedColor?.code"></app-image>
+</ng-container>
