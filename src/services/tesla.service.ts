@@ -108,6 +108,7 @@ export class TeslaService {
     this.selectedColor = null;
     this.selectedModel = null;
     this.colorsOfSelectedModelAvailable = [];
+    this.reinitializeSelectedValuesStepTwo();
   }
 
   reinitializeSelectedValuesStepTwo(): void {
@@ -126,6 +127,6 @@ export class TeslaService {
   }
 
   stepTwoCompleted(): boolean {
-    return this.selectedConfig !== undefined;
+    return !!this.selectedConfig;
   }
 }

@@ -1,10 +1,10 @@
 <h1>{{ title }}</h1>
-<ng-container *ngIf="teslaService.stepOneCompleted()">
+<ng-container *ngIf="teslaService.stepOneCompleted() && !!teslaService.optionsOfSelectedModelAvailable">
   <div class="flex-display-horizontal flex-center">
     <p>{{ configLabel }}</p>
     <select id="configSelect" [(ngModel)]="selectConfig" (change)="configIdSelected(selectConfig)">
       <option [value]="0">Choose your configuration</option>
-      <option *ngFor="let config of teslaService.optionsOfSelectedModelAvailable?.configs" [value]="config.id">
+      <option *ngFor="let config of teslaService.optionsOfSelectedModelAvailable.configs" [value]="config.id">
         {{ config.description }}
       </option>
     </select>
