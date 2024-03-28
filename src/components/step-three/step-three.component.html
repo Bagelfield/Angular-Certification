@@ -2,10 +2,13 @@
 <ng-container *ngIf="teslaService.stepOneCompleted() && teslaService.stepTwoCompleted() && teslaService.selectedConfig && teslaService.selectedColor">
   <h2>{{ modelLabel }}</h2>
   <p class="flex-display-spaced"><span class="bold">{{ teslaService.selectedConfig.description }}</span><span>{{ teslaService.selectedConfig.price | currency : 'USD' }}</span></p>
-  <p>{{ teslaService.selectedConfig | config }}</p>
+  <p class="flex-display-spaced"><span>{{ teslaService.selectedConfig | config }}</span><span></span></p>
   <p class="flex-display-spaced"><span class="bold">{{ teslaService.selectedColor.description }}</span><span>{{ teslaService.selectedColor.price | currency : 'USD' }}</span></p>
   <p *ngIf="packageTowHitch" class="flex-display-spaced"><span class="bold">{{ packageTowHitch }}</span><span>{{ 1000 | currency : 'USD' }}</span></p>
   <p *ngIf="packageYokeWheel" class="flex-display-spaced"><span class="bold">{{ packageYokeWheel }}</span><span>{{ 1000 | currency : 'USD' }}</span></p>
   <p class="borders flex-display-spaced"><span class="bold">TOTAL COST</span><span>{{ teslaService.totalPrice | currency : 'USD' }}</span></p>
   <app-image [modelCode]="teslaService.selectedModel?.code" [colorCode]="teslaService.selectedColor.code"></app-image>
+  <div class="flex-left">
+    <app-previous-step-button [stepIdTarget]="1"></app-previous-step-button>
+  </div>
 </ng-container>

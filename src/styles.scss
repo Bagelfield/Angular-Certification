@@ -10,7 +10,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 20%;
+  padding-right: 20%;
+}
 
+.flex-spaced-between {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 18%;
+  padding-right: 18%;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-right {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 18%;
+}
+
+.flex-left {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 18%;
 }
 
 .bold {

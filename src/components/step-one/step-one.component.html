@@ -1,5 +1,5 @@
 <h1>{{ title }}</h1>
-<div class="flex-display-horizontal" *ngIf="teslaService.modelsAvailable.length > 0">
+<div class="flex-display-horizontal flex-center" *ngIf="teslaService.modelsAvailable.length > 0">
   <p>{{ modelLabel }}</p>
   <select id="modelSelect" [(ngModel)]="selectModel" (change)="modelDescriptionSelected(selectModel)">
     <option value="">Choose your Model</option>
@@ -17,3 +17,6 @@
   </ng-container>
 </div>
 <app-image [modelCode]="selectModel" [colorCode]="selectColor"></app-image>
+<div class="flex-right">
+  <app-next-step-button [stepIdTarget]="1" [actualStepCompleted]="!teslaService.stepOneCompleted()"></app-next-step-button>
+</div>

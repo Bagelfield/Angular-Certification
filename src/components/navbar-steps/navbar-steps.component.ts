@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { routes } from '../../app/app.routes';
 import { TeslaService } from '../../services/tesla.service';
+import { CONSTANTS } from '../../constants/Constants';
 
 @Component({
   selector: 'app-navbar-steps',
@@ -12,14 +13,7 @@ import { TeslaService } from '../../services/tesla.service';
 })
 export class NavbarStepsComponent {
   routes: Routes = routes;
+  readonly CONSTANTS = CONSTANTS;
 
-  stepOne: string;
-  stepTwo: string;
-  stepThree: string;
-
-  constructor(public teslaService: TeslaService) {
-    this.stepOne = 'Step 1';
-    this.stepTwo = 'Step 2';
-    this.stepThree = 'Step 3';
-  }
+  constructor(public teslaService: TeslaService) {}
 }

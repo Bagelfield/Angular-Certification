@@ -3,11 +3,17 @@ import { TeslaService } from '../../services/tesla.service';
 import { CommonModule } from '@angular/common';
 import { ImageComponent } from '../image/image.component';
 import { ConfigPipe } from '../../pipes/config.pipe';
+import { PreviousStepButtonComponent } from '../previous-step-button/previous-step-button.component';
 
 @Component({
   selector: 'app-step-three',
   standalone: true,
-  imports: [CommonModule, ImageComponent, ConfigPipe],
+  imports: [
+    CommonModule,
+    ImageComponent,
+    ConfigPipe,
+    PreviousStepButtonComponent,
+  ],
   templateUrl: './step-three.component.html',
   styleUrl: './step-three.component.scss',
 })

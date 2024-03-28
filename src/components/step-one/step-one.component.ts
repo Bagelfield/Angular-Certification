@@ -4,11 +4,18 @@ import { TeslaService } from '../../services/tesla.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ImageComponent } from '../image/image.component';
 import { FormsModule } from '@angular/forms';
+import { NextStepButtonComponent } from '../next-step-button/next-step-button.component';
 
 @Component({
   selector: 'app-step-one',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, ImageComponent, FormsModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    ImageComponent,
+    FormsModule,
+    NextStepButtonComponent,
+  ],
   templateUrl: './step-one.component.html',
   styleUrl: './step-one.component.scss',
 })

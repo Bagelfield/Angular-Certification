@@ -1,0 +1,1 @@
+<button *ngIf="stepIdTarget!==undefined" class="button-style" [disabled]="actualStepCompleted" [routerLink]="'/'+routes[stepIdTarget].path">{{ CONSTANTS.nextStepLabel }}</button>

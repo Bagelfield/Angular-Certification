@@ -5,11 +5,20 @@ import { CommonModule } from '@angular/common';
 import { ImageComponent } from '../image/image.component';
 import { Options } from '../../models/options';
 import { ConfigPipe } from '../../pipes/config.pipe';
+import { PreviousStepButtonComponent } from '../previous-step-button/previous-step-button.component';
+import { NextStepButtonComponent } from '../next-step-button/next-step-button.component';
 
 @Component({
   selector: 'app-step-two',
   standalone: true,
-  imports: [FormsModule, CommonModule, ImageComponent, ConfigPipe],
+  imports: [
+    FormsModule,
+    CommonModule,
+    ImageComponent,
+    ConfigPipe,
+    PreviousStepButtonComponent,
+    NextStepButtonComponent,
+  ],
   templateUrl: './step-two.component.html',
   styleUrl: './step-two.component.scss',
 })
